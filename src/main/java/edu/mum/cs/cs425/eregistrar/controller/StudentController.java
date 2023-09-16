@@ -45,7 +45,7 @@ public class StudentController {
 
     @PostMapping("/student/edit/{id}")
     public String updateStudent(@PathVariable Long id, @ModelAttribute Student student) {
-        studentService.save(student); // save can also update in Spring Data JPA
+        studentService.save(student); 
         return "redirect:/eregistrar/students";
     }
 
