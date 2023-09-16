@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add New Student</title>
+</head>
+<body>
+
+<h2>Add New Student</h2>
+
+<form th:action="@{/eregistrar/student}" th:object="${student}" method="post">
+    Student Number: <input type="text" th:field="*{studentNumber}" required/><br/>
+    First Name: <input type="text" th:field="*{firstName}" required/><br/>
+    Middle Name: <input type="text" th:field="*{middleName}"/><br/>
+    Last Name: <input type="text" th:field="*{lastName}" required/><br/>
+    Enrollment Date: <input type="date" th:field="*{enrollmentDate}" required/><br/>
+    Is International:
+    <select th:field="*{isInternational}">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <br/>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

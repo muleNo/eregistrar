@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Edit Student</title>
+</head>
+<body>
+
+<h2>Edit Student</h2>
+
+<form th:action="@{/eregistrar/student/edit/{id}(id=${student.studentId})}" th:object="${student}" method="post">
+  Student Number: <input type="text" th:field="*{studentNumber}" required/><br/>
+  First Name: <input type="text" th:field="*{firstName}" required/><br/>
+  Middle Name: <input type="text" th:field="*{middleName}"/><br/>
+  Last Name: <input type="text" th:field="*{lastName}" required/><br/>
+  Enrollment Date: <input type="date" th:field="*{enrollmentDate}" required/><br/>
+  Is International:
+  <select th:field="*{isInternational}">
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+  <br/>
+  <button type="submit">Update</button>
+</form>
+
+</body>
+</html>
